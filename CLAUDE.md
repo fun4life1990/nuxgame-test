@@ -54,7 +54,7 @@ If UI changes don't appear, rebuild assets. Tailwind v4 uses `@import "tailwindc
 
 ## Architecture
 
-- **Laravel 12** streamlined structure: no `app/Http/Middleware/`, no `Console/Kernel.php`.
+- **Laravel 13** streamlined structure: no `app/Http/Middleware/`, no `Console/Kernel.php`.
 - Middleware, exceptions, and routing registered in `bootstrap/app.php`.
 - Service providers in `bootstrap/providers.php`.
 - Commands in `app/Console/Commands/` auto-register.
@@ -71,7 +71,7 @@ The Laravel Boost guidelines are specifically curated by Laravel maintainers for
 This application is a Laravel application and its main Laravel ecosystems package & versions are below. You are an expert with them all. Ensure you abide by these specific packages & versions.
 
 - php - 8.4.20
-- laravel/framework (LARAVEL) - v12
+- laravel/framework (LARAVEL) - v13
 - laravel/pint (PINT) - v1
 - tailwindcss (TAILWINDCSS) - v4
 
@@ -213,14 +213,14 @@ protected function isAccessible(User $user, ?string $path = null): bool
 - If you receive an "Illuminate\Foundation\ViteException: Unable to locate file in Vite manifest" error, you can run `npm run build` or ask the user to run `npm run dev` or `composer run dev`.
 
 
-=== laravel/v12 rules ===
+=== laravel/v13 rules ===
 
-## Laravel 12
+## Laravel 13
 
 - Use the `search-docs` tool to get version specific documentation.
 - Since Laravel 11, Laravel has a new streamlined file structure which this project uses.
 
-### Laravel 12 Structure
+### Laravel 13 Structure
 - No middleware files in `app/Http/Middleware/`.
 - `bootstrap/app.php` is the file to register middleware, exceptions, and routing files.
 - `bootstrap/providers.php` contains application specific service providers.
