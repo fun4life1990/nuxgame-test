@@ -3,11 +3,11 @@ WORKDIR "/application"
 
 RUN apk update && apk add --no-cache \
     git \
-    postgresql-dev \
+#    postgresql-dev \
 #    php84-pgsql \
     php84-pecl-xdebug
 
-RUN docker-php-ext-install pdo pdo_pgsql
+RUN docker-php-ext-install pdo pdo_mysql
 
 RUN { \
         echo 'zend_extension=/usr/lib/php84/modules/xdebug.so'; \
@@ -16,5 +16,7 @@ RUN { \
         echo 'xdebug.start_with_request=yes'; \
 #        echo 'xdebug.log=/tmp/xdebug.log'; \
     } > /usr/local/etc/php/conf.d/99-xdebug.ini
+
+COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
 EXPOSE 9000

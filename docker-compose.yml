@@ -4,16 +4,16 @@
 version: '3.1'
 services:
     db:
-        image: 'postgres:15-alpine'
-        working_dir: /application
+        image: mariadb:10.3.36
         volumes:
-            - '.:/application'
+          - ./phpdocker/mysql/data:/var/lib/mysql
         environment:
-            - POSTGRES_USER=root
-            - POSTGRES_PASSWORD=secret
-            - POSTGRES_DB=nuxgame
+          MYSQL_DATABASE: ${DB_DATABASE}
+          MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+          MYSQL_PASSWORD: ${DB_PASSWORD}
+          MYSQL_USER: ${DB_USERNAME}
         ports:
-            - '14004:5432'
+            - '14006:3306'
 
     web:
         image: 'nginx:alpine'
