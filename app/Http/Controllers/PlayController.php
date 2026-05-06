@@ -35,7 +35,11 @@ class PlayController extends Controller
 
         return redirect()
             ->route('play.show', $accessLink)
-            ->with('lucky', $result);
+            ->with('lucky', [
+                'number' => $result->number,
+                'is_win' => $result->is_win,
+                'amount' => $result->amount,
+            ]);
     }
 
     public function history(AccessLink $accessLink, LuckyDrawService $service): View

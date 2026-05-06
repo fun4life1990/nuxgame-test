@@ -12,13 +12,13 @@
         Expires at: {{ $link->expires_at->toDateTimeString() }}
     </p>
 
-    @if (session('lucky'))
-        @php($lucky = session('lucky'))
+    @php($lucky = session('lucky'))
+    @if ($lucky)
         <h2>Result</h2>
         <p>
-            Number: <strong>{{ $lucky->number }}</strong><br>
-            Status: <strong>{{ $lucky->is_win ? 'Win' : 'Lose' }}</strong><br>
-            Amount: <strong>{{ $lucky->amount }}</strong>
+            Number: <strong>{{ $lucky['number'] }}</strong><br>
+            Status: <strong>{{ $lucky['is_win'] ? 'Win' : 'Lose' }}</strong><br>
+            Amount: <strong>{{ $lucky['amount'] }}</strong>
         </p>
     @endif
 

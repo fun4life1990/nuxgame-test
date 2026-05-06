@@ -2,7 +2,7 @@
     "mcpServers": {
         "laravel-boost": {
             "type": "stdio",
-            "command": "docker-compose",
+            "command": "docker compose",
             "args": [
                 "exec",
                 "app",

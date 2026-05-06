@@ -13,7 +13,7 @@ This project is a Laravel application using MySQL and Docker (Nginx + PHP-FPM). 
 ### Prerequisites
 
 - Docker & Docker Compose
-- DFree ports: 14000, 14006
+- Free ports: 14000, 14006
 
 ### Setup
 
